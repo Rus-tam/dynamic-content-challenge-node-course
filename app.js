@@ -18,6 +18,9 @@ app.set('view engine', 'hbs');
 app.set('views', viewPath);
 hbs.registerPartials(layoutPath);
 
+//Setup static directory to serve
+app.use(express.static(publicDirectoryPath));
+
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(indexRouter.routes);
 app.use(userRouter);
