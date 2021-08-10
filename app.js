@@ -1,9 +1,9 @@
 const path = require('path');
 const express = require('express');
 const hbs = require('hbs');
+const bodyParser = require('body-parser');
 const indexRouter = require('./routes/index');
 const userRouter = require('./routes/users');
-
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -18,7 +18,8 @@ app.set('view engine', 'hbs');
 app.set('views', viewPath);
 hbs.registerPartials(layoutPath);
 
-app.use(indexRouter);
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(indexRouter.routes);
 app.use(userRouter);
 
 

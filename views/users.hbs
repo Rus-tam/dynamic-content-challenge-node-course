@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{pageTitle}}</title>
+</head>
+<body>
+<div class="main-content">
+    {{>header}}
+    <h2>Users list</h2>
+    {{#if hasUsers}}
+        {{#each users}}
+            <ul>
+                <li>
+                    {{user_name}}
+                </li>
+            </ul>
+        {{/each}}
+    {{else}}
+        <h3>Users list is empty</h3>
+    {{/if}}
+</div>
+
+{{>fotter}}
+</body>
+</html>

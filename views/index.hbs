@@ -7,14 +7,14 @@
 <body>
     <div class="main-content">
         {{>header}}
-        <form action="../views/users" method="POST">
+        <form action="/users" method="POST">
             <label for="title">User name</label>
-            <input type="text" name="user name" id="user_name">
+            <input type="text" name="user_name" id="user_name">
 
             <button class="btn">Add User</button>
         </form>
     </div>
 
-    
+    {{>fotter}}
 </body>
 </html>
